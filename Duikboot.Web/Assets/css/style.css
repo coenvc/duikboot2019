@@ -1,6 +1,11 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url('../fonts/BebasNeue-Regular.ttf')
+}
+
 body {
   background: #fff;
-  font-family: "Raleway", arial, sans-serif;
+  font-family: "BebasNeue", arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
@@ -20,7 +25,7 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
   color: #000;
-  font-family: "Playfair Display", times, serif;
+  font-family: "BebasNeue", times, serif;
 }
 
 header {

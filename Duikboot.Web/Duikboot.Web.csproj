@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +70,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -78,26 +97,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -115,6 +116,7 @@
     <Content Include="Assets\contact.html" />
     <Content Include="Assets\css\animate.css" />
     <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\custom.css" />
     <Content Include="Assets\css\owl.carousel.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\destination.html" />
@@ -138,6 +140,70 @@
     <Content Include="Assets\images\person_4.jpg" />
     <Content Include="Assets\images\person_5.jpg" />
     <Content Include="Assets\images\person_6.jpg" />
+    <Content Include="Assets\img\about\1.png" />
+    <Content Include="Assets\img\about\2.png" />
+    <Content Include="Assets\img\about\3.png" />
+    <Content Include="Assets\img\about\4.png" />
+    <Content Include="Assets\img\about\5.jpg" />
+    <Content Include="Assets\img\backoffice\porno.jpeg" />
+    <Content Include="Assets\img\content\Geslaagd.png" />
+    <Content Include="Assets\img\content\Keiestampersdorp.png" />
+    <Content Include="Assets\img\content\LosInLoon.png" />
+    <Content Include="Assets\img\content\Mislukt.png" />
+    <Content Include="Assets\img\content\MOCP.jpg" />
+    <Content Include="Assets\img\content\Naschommelen.png" />
+    <Content Include="Assets\img\content\NIEUW-website-planning-desktop-wit%281%29.png" />
+    <Content Include="Assets\img\content\NIEUW-website-planning-desktop-wit.png" />
+    <Content Include="Assets\img\content\NIEUW-website-planning-mobiel-wit%281%29.png" />
+    <Content Include="Assets\img\content\NIEUW-website-planning-mobiel-wit.png" />
+    <Content Include="Assets\img\content\Roeien_of_verzuipen.png" />
+    <Content Include="Assets\img\content\Veurgloeien.jpg" />
+    <Content Include="Assets\img\content\Voorlopige_planning.png" />
+    <Content Include="Assets\img\destinations\Lallebal.png" />
+    <Content Include="Assets\img\destinations\LOS_in_Loon.jpg" />
+    <Content Include="Assets\img\destinations\MOCP.jpg" />
+    <Content Include="Assets\img\destinations\Roeien_of_verzuipen.png" />
+    <Content Include="Assets\img\fotos\17311226_1921800954720864_8349057664213180845_o.jpg" />
+    <Content Include="Assets\img\fotos\20170225_161200560_iOS.jpg" />
+    <Content Include="Assets\img\fotos\20170226_105932286_iOS.jpg" />
+    <Content Include="Assets\img\fotos\20170226_125226698_iOS.jpg" />
+    <Content Include="Assets\img\fotos\20170227_155858436_iOS.jpg" />
+    <Content Include="Assets\img\fotos\BB1.jpg" />
+    <Content Include="Assets\img\fotos\BB2.jpg" />
+    <Content Include="Assets\img\fotos\BB3.jpg" />
+    <Content Include="Assets\img\fotos\dikkeshit.jpg" />
+    <Content Include="Assets\img\fotos\IMG_1036.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1113.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1117.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1128.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1138.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1146.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1158.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1166.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1222.JPG" />
+    <Content Include="Assets\img\fotos\IMG_1224.JPG" />
+    <Content Include="Assets\img\fotos\IMG_2086.JPG" />
+    <Content Include="Assets\img\fotos\Los in loon.jpg" />
+    <Content Include="Assets\img\fotos\Los in loon2.jpg" />
+    <Content Include="Assets\img\fotos\Los in loon3.jpg" />
+    <Content Include="Assets\img\fotos\Los in loon4.jpg" />
+    <Content Include="Assets\img\fotos\Los in loon5.jpg" />
+    <Content Include="Assets\img\header-bg.jpg" />
+    <Content Include="Assets\img\logos\BAM-Vermeer.jpg" />
+    <Content Include="Assets\img\logos\Duikboot.png" />
+    <Content Include="Assets\img\logos\Van_de_Pas.png" />
+    <Content Include="Assets\img\logos\Weijtmans.png" />
+    <Content Include="Assets\img\logos\Woox.png" />
+    <Content Include="Assets\img\mail-image.png" />
+    <Content Include="Assets\img\planning.jpg" />
+    <Content Include="Assets\img\portfolio\1.jpg" />
+    <Content Include="Assets\img\team\1.jpg" />
+    <Content Include="Assets\img\team\2.jpg" />
+    <Content Include="Assets\img\team\3.jpg" />
+    <Content Include="Assets\img\website-header-mobiel.jpg" />
+    <Content Include="Assets\img\website-header.png" />
+    <Content Include="Assets\img\website-planning-desktop.png" />
+    <Content Include="Assets\img\website-planning-mobiel.png" />
     <Content Include="Assets\index.html" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Assets\js\form.js" />
@@ -154,7 +220,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,9 +232,9 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\Registration\Register.cshtml" />
     <Content Include="Views\Generic.cshtml" />
-    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="Assets\css\bootstrap.css.map" />
     <Content Include="Assets\fonts\.DS_Store" />
@@ -268,6 +334,10 @@
     <Content Include="Assets\scss\_type.scss" />
     <Content Include="Assets\scss\_utilities.scss" />
     <Content Include="Assets\scss\_variables.scss" />
+    <Content Include="Views\Registration\Complete.cshtml" />
+    <Content Include="Views\Registration\Failed.cshtml" />
+    <Content Include="Assets\fonts\BebasNeue-Regular.otf" />
+    <Content Include="Assets\fonts\BebasNeue-Regular.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -278,7 +348,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\MacroPartials\" />
-    <Folder Include="Views\Register\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

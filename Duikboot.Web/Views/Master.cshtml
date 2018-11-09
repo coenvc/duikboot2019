@@ -1,5 +1,5 @@
 ﻿<head>
-    <title>CV d'n Duikboot | Schrijf je nu in! </title>
+    <title>CV D'n Duikboot</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,13 +15,14 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="~/Assets/css/style.css">
-</head> 
+    <link rel="stylesheet" href="~/Assets/css/custom.css">
+</head>
 <body>
     <header role="banner">
 
         <nav class="navbar navbar-expand-md navbar-dark bg-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Listed</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><img src="~/Assets/img/logos/duikboot.png" alt="CV D'n Duikboot"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -29,97 +30,91 @@
                 <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
                     <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="destination.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Destination</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown04">
-                                <a class="dropdown-item" href="destination.html">Places</a>
-                                <a class="dropdown-item" href="destination.html">Hotels</a>
-                                <a class="dropdown-item" href="destination.html">Restaurants</a>
-                            </div>
-
+                            <a class="nav-link" href="@Url.Action("Index","Home")#bestemmingen">Bestemmingen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")#planning">Planning</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")#sponsors">Sponsoren</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")#contact">Contact</a>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
-    </header> 
+    </header>
 
     @RenderBody()
 
     <footer class="site-footer">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-4">
-                <h3 class="mb-4">About</h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod!</p>
-                <ul class="list-unstyled ">
-                    <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">34 Street Name, City Name Here, United States</span></li>
-                    <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+1 242 4942 290</span></li>
-                    <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span class="">info@yourdomain.com</span></li>
-                </ul>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h3 class="mb-4">About</h3>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod!</p>
+                    <ul class="list-unstyled ">
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-location"></span></span><span class="">34 Street Name, City Name Here, United States</span></li>
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-ios-telephone"></span></span><span class="">+1 242 4942 290</span></li>
+                        <li class="d-flex"><span class="mr-3"><span class="icon ion-email"></span></span><span class="">info@yourdomain.com</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h3 class="mb-4">Links</h3>
+                    <ul class="list-unstyled ">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="mb-4">Latest Blog</h3>
+                    <ul class="list-unstyled blog-entry-footer">
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>7 Best Destination in The World</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>4 Hour Work Week And The Rest Is Travel</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="post-meta">March 20, 2018</span>
+                                <h3>Why You Should Travel Today</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3>Connect</h3>
+                    <p>
+                        <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
+                        <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
+                        <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
+                    </p>
+                </div>
             </div>
-            <div class="col-md-2">
-                <h3 class="mb-4">Links</h3>
-                <ul class="list-unstyled ">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Destination</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h3 class="mb-4">Latest Blog</h3>
-                <ul class="list-unstyled blog-entry-footer">
-                    <li>
-                        <a href="#">
-                            <span class="post-meta">March 20, 2018</span>
-                            <h3>7 Best Destination in The World</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="post-meta">March 20, 2018</span>
-                            <h3>4 Hour Work Week And The Rest Is Travel</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="post-meta">March 20, 2018</span>
-                            <h3>Why You Should Travel Today</h3>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h3>Connect</h3>
-                <p>
-                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                </p>
+            <div class="row justify-content-center">
+                <div class="col-md-7 text-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-7 text-center">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 
 <!-- END footer -->
@@ -140,72 +135,72 @@
 <script src="~/Assets/js/jquery.stellar.min.js"></script>
 
 <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
+    // This example displays an address form, using the autocomplete feature
+    // of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
-      var componentForm = {
+    var placeSearch, autocomplete;
+    var componentForm = {
         street_number: 'short_name',
         route: 'long_name',
         locality: 'long_name',
         administrative_area_level_1: 'short_name',
         country: 'long_name',
         postal_code: 'short_name'
-      };
+    };
 
-      function initAutocomplete() {
+    function initAutocomplete() {
         // Create the autocomplete object, restricting the search to geographical
         // location types.
         autocomplete = new google.maps.places.Autocomplete(
             /** @@type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+            { types: ['geocode'] });
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
         autocomplete.addListener('place_changed', fillInAddress);
-      }
+    }
 
-      function fillInAddress() {
+    function fillInAddress() {
         // Get the place details from the autocomplete object.
         var place = autocomplete.getPlace();
 
         for (var component in componentForm) {
-          document.getElementById(component).value = '';
-          document.getElementById(component).disabled = false;
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
         }
 
         // Get each component of the address from the place details
         // and fill the corresponding field on the form.
         for (var i = 0; i < place.address_components.length; i++) {
-          var addressType = place.address_components[i].types[0];
-          if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-          }
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
         }
-      }
+    }
 
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var circle = new google.maps.Circle({
+                    center: geolocation,
+                    radius: position.coords.accuracy
+                });
+                autocomplete.setBounds(circle.getBounds());
             });
-            autocomplete.setBounds(circle.getBounds());
-          });
         }
-      }
+    }
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"

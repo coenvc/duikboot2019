@@ -1,0 +1,53 @@
+﻿@font-face {
+    font-family: "BebasNeue";
+    src: url('../fonts/BebasNeue-Regular.ttf')
+}
+
+
+.planning-mobile {
+    display: none
+}
+
+.planning-desktop {
+    display: block;
+}
+
+body {
+    font-family: BebasNeue !important;
+    font-size: large;
+}
+
+.section-heading {
+    padding-top: 60px;
+}
+
+.btn-register {
+    font-size: 1.5rem;
+    margin-top: 60px;
+    background-color: #484848;
+    border-color: #2f2f2f;
+    margin-bottom: 60px;
+}
+
+.btn.register:hover {
+    background: #484848 !important;
+    border-color: #2f2f2f !important;
+}
+
+.destinations {
+    margin-bottom: 20px;
+}
+
+@media(max-width: 480px) {
+    .site-hero {
+        background-image: url('../../Assets/img/website-header-mobiel.jpg') !important;
+    }
+
+    .planning-desktop {
+        display: none
+    }
+
+    .planning-mobile {
+        display: block;
+    }
+}
