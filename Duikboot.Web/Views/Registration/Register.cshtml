@@ -20,38 +20,110 @@
             <div class="col-md-12 text-center">
                 <h1>Inschrijven!</h1>
                 <p>Schrijf je nu in voor een geweldige partycruise langs verschillende prachtige bestemmingen!</p>
-
             </div>
-            <div class="col-lg-6 col-md-12 mb-5 element-animate">
+
+            <div class="col-lg-12 element-animate">
 
                 @using (Html.BeginForm("Submit", "Registration", FormMethod.Post))
                 {
+
                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="FirstName">Name</label>
-                            <input type="text" id="FirstName" name="FirstName" class="form-control" required data-validation-required-message="Vul alsjeblieft je voornaam in.">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" id="FirstName" name="FirstName" placeholder="Voornaam" class="form-control" required data-validation-required-message="Vul alsjeblieft je voornaam in.">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="SurName" name="SurName" placeholder="Achternaam" class="form-control" required data-validation-required-message="Vul alsjeblieft je achternaam in.">
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" id="Email" name="Email" placeholder="Email" class="form-control" required data-validation-required-message="Vul alsjeblieft je e-mailadres in.">
+
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Telefoonnummer" class="form-control" required data-validation-required-message="Vul je telefoonnummer in.">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="SurName">Achternaam</label>
-                            <input type="text" id="SurName" name="SurName" class="form-control" required data-validation-required-message="Vul alsjeblieft je achternaam in.">
-                        </div>
+                    <div class="checkbox zaterdag">
+                        <label>
+                            <input type="checkbox" id="zaterdag" name="zaterdag" value="45">
+                            <input type="hidden" name="zaterdag" value="false" />
+                            Zaterdag 10 FEB. €45,-
+                        </label>
+                        <table>
+                            <tr>
+                                <td>Overdag €20,- OPTOCHT BIEZENMORTEL</td>
+                            </tr>
+                            <tr>
+                                <td>Avond €25,- BERKEL BEEFT INCL TICKET</td>
+                            </tr>
+                        </table>
+                        <span class="pull-right" price="">€45</span>
+                        <hr />
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="Email">Email</label>
-                            <input type="email" id="Email" name="Email" class="form-control" required data-validation-required-message="Vul alsjeblieft je e-mailadres in.">
-                        </div>
+                    <div class="checkbox zondag">
+                        <label>
+                            <input type="checkbox" id="zondag" name="zondag" value="40">
+                            <input type="hidden" name="zondag" value="false" />
+                            Zondag 11 FEB. €40,-
+                        </label>
+                        <table>
+                            <tr>
+                                <td>Overdag €20,- KOFFIECONCERT GOMMELEN OPTOCHT UDENHOUT </td>
+                            </tr>
+                            <tr>
+                                <td>Avond €20,- OLD SCHOOL CARNAVALS PARTY UDENHOUT (INCL TICKET)</td>
+                            </tr>
+                        </table>
+                        <span class="pull-right price">€40,-</span>
+                        <hr />
                     </div>
 
+                    <div class="checkbox maandag">
+                        <label>
+                            <input type="checkbox" id="maandag" name="maandag" value="40">
+                            <input type="hidden" name="maandag" value="false" />
+                            MAANDAG 12 FEB. €40,-
+                        </label>
+                        <table>
+                            <tr>
+                                <td>Overdag €20,- VERVOER EN OPTOCHT LOON OP ZAND</td>
+                            </tr>
+                            <tr>
+                                <td>Avond €20,- LOS IN LOON</td>
+                            </tr>
+                        </table>
+                        <span class="pull-right price">€40,-</span>
+                        <hr />
+                    </div>
+
+                    <div class="checkbox dinsdag">
+                        <label>
+                            <input type="checkbox" id="dinsdag" name="dinsdag" value="30">
+                            <input type="hidden" name="dinsdag" value="false" />
+                            DINSDAG 13 FEB. €30,-
+                        </label>
+                        <table>
+                            <tr>
+                                <td>Overdag €20,- DWEILTOUR</td>
+                            </tr>
+                            <tr>
+                                <td>Avond €10,- LICHTJESOPTOCHT</td>
+                            </tr>
+                        </table>
+                        <span class="pull-right price">€30,-</span>
+                        <hr />
+                    </div>
+                    <input type="hidden" value="10000" name="amount" id="amount" class="price-value" />
+                    <span class="pull-right price-total">UW TOTAAL: </span>
                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="PhoneNumber">Telefoonnummer</label>
-                            <input type="tel" id="PhoneNumber" name="PhoneNumber" class="form-control" required data-validation-required-message="Vul je telefoonnummer in.">
-                        </div>
+                        <p class="text-center">Ik ga akkoord met de <a href="~/Content/documents/Huisregels_Carnaval_2018.pdf">algemene voorwaarden </a></p>
                     </div>
 
                     <div class="row">
@@ -59,6 +131,8 @@
                             <input type="submit" value="Verzenden" id="registerForm__submit" class="btn btn-primary">
                         </div>
                     </div>
+
+
                 }
 
             </div>
