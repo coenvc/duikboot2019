@@ -34,22 +34,20 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" id="SurName" name="SurName" placeholder="Achternaam" class="form-control" required data-validation-required-message="Vul alsjeblieft je achternaam in.">
-
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="email" id="Email" name="Email" placeholder="Email" class="form-control" required data-validation-required-message="Vul alsjeblieft je e-mailadres in.">
-
                             </div>
                             <div class="form-group">
-                                <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Telefoonnummer" class="form-control" required data-validation-required-message="Vul je telefoonnummer in.">
+                                <input type="tel" id="PhoneNumber" name="PhoneNumber" placeholder="Telefoonnummer" class="form-control" oninvalid="this.setCustomValidity('Vul je telefoonnummer in.')" oninput="setCustomValidity('')">
                             </div>
                         </div>
                     </div>
 
-                    <div class="checkbox zaterdag">
+                    <div class="checkbox zaterdag form-group">
                         <label>
                             <input type="checkbox" id="zaterdag" name="zaterdag" value="45">
                             <input type="hidden" name="zaterdag" value="false" />
@@ -67,7 +65,7 @@
                         <hr />
                     </div>
 
-                    <div class="checkbox zondag">
+                    <div class="checkbox zondag form-group">
                         <label>
                             <input type="checkbox" id="zondag" name="zondag" value="40">
                             <input type="hidden" name="zondag" value="false" />
@@ -85,7 +83,7 @@
                         <hr />
                     </div>
 
-                    <div class="checkbox maandag">
+                    <div class="checkbox maandag form-group">
                         <label>
                             <input type="checkbox" id="maandag" name="maandag" value="40">
                             <input type="hidden" name="maandag" value="false" />
@@ -103,7 +101,7 @@
                         <hr />
                     </div>
 
-                    <div class="checkbox dinsdag">
+                    <div class="checkbox dinsdag form-group">
                         <label>
                             <input type="checkbox" id="dinsdag" name="dinsdag" value="30">
                             <input type="hidden" name="dinsdag" value="false" />
@@ -120,19 +118,25 @@
                         <span class="pull-right price">€30,-</span>
                         <hr />
                     </div>
-                    <input type="hidden" value="10000" name="amount" id="amount" class="price-value" />
-                    <span class="pull-right price-total">UW TOTAAL: </span>
-                    <div class="row">
-                        <p class="text-center">Ik ga akkoord met de <a href="~/Content/documents/Huisregels_Carnaval_2018.pdf">algemene voorwaarden </a></p>
-                    </div>
 
                     <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="submit" value="Verzenden" id="registerForm__submit" class="btn btn-primary">
+                        <div class="col-lg-12 form-group pull-right">
+                            <input type="hidden" value="10000" name="amount" id="amount" class="price-value"/>
+                            <span class="pull-right price-total">UW TOTAAL: € 0,-</span>
                         </div>
                     </div>
 
+                    <div class="row text-center">
+                        <div class="col-lg-12 form-group">
+                            <span class="text-center"><input type="checkbox" id="rules" name="rules" required> Ik ga akkoord met de <a href="~/Assets/documents/Huisregels_carnaval_2019.pdf" target="_blank">algemene voorwaarden </a></span>
+                        </div>
+                    </div>
 
+                    <div class="row text-center">
+                        <div class="col-lg-12 form-group">
+                            <input type="submit" value="Verzenden" id="registerForm__submit" class="btn btn-primary btn-submit-register">
+                        </div>
+                    </div>
                 }
 
             </div>

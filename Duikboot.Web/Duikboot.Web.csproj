@@ -116,10 +116,12 @@
     <Content Include="Assets\contact.html" />
     <Content Include="Assets\css\animate.css" />
     <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\custom.css" />
     <Content Include="Assets\css\owl.carousel.min.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\destination.html" />
+    <Content Include="Assets\documents\bootstrap.css" />
     <Content Include="Assets\fonts\fontawesome\css\font-awesome.min.css" />
     <Content Include="Assets\fonts\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\fonts\ionicons\cheatsheet.html" />
@@ -195,6 +197,7 @@
     <Content Include="Assets\img\logos\Weijtmans.png" />
     <Content Include="Assets\img\logos\Woox.png" />
     <Content Include="Assets\img\mail-image.png" />
+    <Content Include="Assets\img\planning-mobiel.jpg" />
     <Content Include="Assets\img\planning.jpg" />
     <Content Include="Assets\img\portfolio\1.jpg" />
     <Content Include="Assets\img\team\1.jpg" />
@@ -206,7 +209,6 @@
     <Content Include="Assets\img\website-planning-mobiel.png" />
     <Content Include="Assets\index.html" />
     <Content Include="Assets\js\bootstrap.min.js" />
-    <Content Include="Assets\js\form.js" />
     <Content Include="Assets\js\jquery-3.2.1.min.js" />
     <Content Include="Assets\js\jquery-migrate-3.0.0.js" />
     <Content Include="Assets\js\jquery.stellar.min.js" />
@@ -214,7 +216,18 @@
     <Content Include="Assets\js\main.js" />
     <Content Include="Assets\js\owl.carousel.min.js" />
     <Content Include="Assets\js\popper.min.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +260,6 @@
     <Content Include="Assets\fonts\ionicons\fonts\ionicons.ttf" />
     <Content Include="Assets\fonts\ionicons\fonts\ionicons.woff" />
     <Content Include="Assets\images\.DS_Store" />
-    <Content Include="Assets\listed.zip" />
     <Content Include="Assets\scss\.DS_Store" />
     <Content Include="Assets\scss\bootstrap-grid.scss" />
     <Content Include="Assets\scss\bootstrap-reboot.scss" />
@@ -338,6 +350,44 @@
     <Content Include="Views\Registration\Failed.cshtml" />
     <Content Include="Assets\fonts\BebasNeue-Regular.otf" />
     <Content Include="Assets\fonts\BebasNeue-Regular.ttf" />
+    <Content Include="Assets\documents\Huisregels_carnaval_2019.pdf" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="vendor\font-awesome\less\animated.less" />
+    <Content Include="vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="vendor\font-awesome\less\core.less" />
+    <Content Include="vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="vendor\font-awesome\less\icons.less" />
+    <Content Include="vendor\font-awesome\less\larger.less" />
+    <Content Include="vendor\font-awesome\less\list.less" />
+    <Content Include="vendor\font-awesome\less\mixins.less" />
+    <Content Include="vendor\font-awesome\less\path.less" />
+    <Content Include="vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="vendor\font-awesome\less\stacked.less" />
+    <Content Include="vendor\font-awesome\less\variables.less" />
+    <Content Include="vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendor\font-awesome\scss\_core.scss" />
+    <Content Include="vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="vendor\font-awesome\scss\_list.scss" />
+    <Content Include="vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="vendor\font-awesome\scss\_path.scss" />
+    <Content Include="vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="vendor\font-awesome\scss\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
