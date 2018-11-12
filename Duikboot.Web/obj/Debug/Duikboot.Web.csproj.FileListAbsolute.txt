@@ -55,7 +55,6 @@ c:\users\coenv\documents\visual studio 2017\Projects\Duikboot.Web\Duikboot.Web\o
 c:\users\coenv\documents\visual studio 2017\Projects\Duikboot.Web\Duikboot.Web\obj\Debug\Duikboot.Web.pdb
 c:\users\coenv\documents\visual studio 2017\Projects\Duikboot.Web\Duikboot.Web\bin\Mollie.Api.dll
 c:\users\coenv\documents\visual studio 2017\Projects\Duikboot.Web\Duikboot.Web\bin\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csprojAssemblyReference.cache
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.dll
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.pdb
@@ -114,3 +113,4 @@ D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\System.Net.Http.Formatting.xml
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\System.Web.Http.xml
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\System.Web.Http.WebHost.xml
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csproj.CopyComplete
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csprojAssemblyReference.cache

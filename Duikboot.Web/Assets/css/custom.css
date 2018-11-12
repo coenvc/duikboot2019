@@ -73,3 +73,16 @@ body {
 .sponsors_div {
     padding-bottom: 40px;
 }
+
+header .navbar {
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4) !important;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+}
+
+.feature-destination, .slider-wrap {
+    z-index: 0 !important;
+}
