@@ -90,6 +90,7 @@ namespace Duikboot.Web.Controllers
             {
                 case (PaymentStatus.Paid):
                     Models.User meerijder = Session["Meerijder"] as Models.User;
+
                     // Save _user;
                     this.SendMail(meerijder);
                     return View("Complete");
