@@ -63,7 +63,7 @@
                                     <td>Avond €20,- HET LALLEBAL! (NIEUW)</td>
                                 </tr>
                             </table>
-                            <span class="pull-right" price="">€40</span>
+                            <span class="pull-right" price="">€40,-</span>
                             <hr />
                         </div>
 
@@ -151,6 +151,7 @@
 
     $(document).ready(function () {
         getAvailableDays();
+        idleReload();
 
         //Check each day's availability, if the day is sold out
         //Disable checkbox and prepend ("UITVERKOCHT ")
@@ -176,7 +177,31 @@
                 });
         }
 
-        String.prototype.capitalize = function() {
+        function idleReload() {
+            var t;
+            window.onload = resetTimer;
+            // DOM Events
+            document.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onmousedown = resetTimer; // touchscreen presses
+            document.ontouchstart = resetTimer;
+            document.onclick = resetTimer;     // touchpad clicks
+            document.onscroll = resetTimer;    // scrolling with arrow keys
+            document.onkeypress = resetTimer;
+
+            function logout() {
+                if(!alert('Je bent te lang inactief. Herlaad de pagina.')){window.location.reload();}
+            }
+
+            function resetTimer() {
+                clearTimeout(t);
+                t = setTimeout(logout, 1200000);
+                // 1000 milisec = 1 sec
+                // 1.200.000 milisec = 20 minutes
+            }
+        };
+
+        String.prototype.capitalize = function () {
             return this.charAt(0).toUpperCase() + this.slice(1);
         }
 
@@ -189,8 +214,7 @@
                 console.log(price);
                 $(".price-value").val(price);
 
-            }
-            else {
+            } else {
                 price = +price - +this["value"];
                 $(".price-value").val(price);
                 console.log($(".price-value").val());
@@ -201,14 +225,15 @@
 
         });
 
-        var verifyAtLeastOneCheckboxIsPressed = function() {
+        var verifyAtLeastOneCheckboxIsPressed = function () {
             var checkboxes = $('.checkbox-group .checkbox');
             var inputs = checkboxes.find('input');
             var first = inputs.first()[0];
 
-            inputs.on('change', function () {
-                this.setCustomValidity('');
-            });
+            inputs.on('change',
+                function () {
+                    this.setCustomValidity('');
+                });
 
             first.setCustomValidity(checkboxes.find('input:checked').length === 0
                 ? 'Selecteer tenminste één dag om mee te rijden'
@@ -221,5 +246,5 @@
             $(".price-value").val(price);
             return;
         });
-    })
+    });
 </script>
