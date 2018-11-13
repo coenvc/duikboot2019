@@ -3,12 +3,12 @@
     Layout = "../Master.cshtml";
 }
 
-<section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url('../../Assets/img/header-bg.jpg')">
+<section class="site-hero site-hero-innerpage" style="background-image: url('../../Assets/img/header-bg.jpg')">
     <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
             <div class="col-md-8 text-center">
                 <div class="mb-5 element-animate">
-                    <img href="#" src="~/Assets/img/content/Geslaagd.png" style="padding-top: 50px;" class="img-responsive img-circle" alt="" height="">
+                    <img href="#" src="~/Assets/img/content/Geslaagd.png" style="padding-top: 50px; max-width: 35%" class="img-responsive img-circle" alt="" height="">
                 </div>
             </div>
         </div>
@@ -19,7 +19,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">BETALING GESLAAGD!</h2>
+                <h2 class="section-heading">GEFELICITEERD JE PARTYCRUISE IS GEBOEKT!</h2>
+                <h2>JE BETALING IS GESLAAGD!</h2>
             </div>
         </div>
 
@@ -31,7 +32,7 @@
 
         <div class="row">
             <div class="col-lg-12 text-center">
-                <a href="@Url.Action("Index","Registration")" class="page-scroll btn btn-xl" id="btn-header">TERUG NAAR INSCHRIJVEN</a>
+                <a href="@Url.Action("Index","Home")">TERUG NAAR DE WEBSITE</a>
             </div>
         </div>
     </div>

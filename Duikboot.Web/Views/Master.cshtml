@@ -37,6 +37,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Boeken</a>
+                            @*<a class="nav-link" href="@Url.Action("Index","Registration")">Boeken</a>*@
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="@Url.Action("Index","Home")#bestemmingen">Bestemmingen</a>
                         </li>
@@ -44,7 +48,7 @@
                             <a class="nav-link" href="@Url.Action("Index","Home")#planning">Planning</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.Action("Index","Home")#sponsors">Sponsoren</a>
+                            <a class="nav-link" href="@Url.Action("Index","Home")#footer">Contact</a>
                         </li>
                     </ul>
 
@@ -55,7 +59,7 @@
 
     @RenderBody()
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="footer">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-4 text-center">
@@ -174,8 +178,4 @@
     }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"
-        async defer></script>
-
 <script src="~/Assets/js/main.js"></script>
-<script src="~/Assets/js/form.js"></script>

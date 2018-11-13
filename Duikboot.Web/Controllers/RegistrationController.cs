@@ -6,12 +6,17 @@ using Mollie.Api.Models.Payment.Request;
 using Mollie.Api.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Mail;
 using Mollie.Api.Models.Payment.Response;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Razor;
 using Duikboot.Web.ExtensionMethods;
 using Duikboot.Web.Models;
 using Mollie.Api.Models.Payment;
+using RazorEngine;
+using RazorEngine.Templating;
 
 namespace Duikboot.Web.Controllers
 {
@@ -37,8 +42,25 @@ namespace Duikboot.Web.Controllers
         [System.Web.Mvc.AcceptVerbs(HttpVerbs.Post)]
         public async Task<ActionResult> Submit([FromBody]Duikboot.Web.Models.User user)
         {
-
             user = Extension.SetDays(user);
+
+            user.Days = new Dictionary<string, int>();
+            if (user.Zaterdag == true)
+            {
+                user.Days.Add("Zaterdag", 40);
+            }
+            if (user.Zondag == true)
+            {
+                user.Days.Add("Zondag", 50);
+            }
+            if (user.Maandag == true)
+            {
+                user.Days.Add("Maandag", 45);
+            }
+            if (user.Dinsdag == true)
+            {
+                user.Days.Add("Dinsdag", 30);
+            }
 
             var amount = $"{user.Amount:0.00}".Replace(",", ".");
 
@@ -69,6 +91,7 @@ namespace Duikboot.Web.Controllers
                 case (PaymentStatus.Paid):
                     Models.User meerijder = Session["Meerijder"] as Models.User;
                     // Save _user;
+                    this.SendMail(meerijder);
                     return View("Complete");
                 default:
                     return View("Failed");
@@ -89,6 +112,52 @@ namespace Duikboot.Web.Controllers
 
             //return Json(meerijderRepository.GetAvailableDates(), JsonRequestBehavior.AllowGet);
             return Json(availability, JsonRequestBehavior.AllowGet);
+        }
+
+        private void SendMail(User user)
+        {
+
+            var test = Server.MapPath("~/Templates/SubscriptionEmail.cshtml");
+            if (System.IO.File.Exists(test))
+            {
+                string template = System.IO.File.ReadAllText(test);
+                var result = Engine.Razor.RunCompile(template, Guid.NewGuid().ToString(), null, user);
+
+                SmtpClient smtpClient = new SmtpClient();
+
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.EnableSsl = true;
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Port = 587;
+
+                smtpClient.UseDefaultCredentials = false;
+                System.Net.NetworkCredential credentials =
+                    new System.Net.NetworkCredential("dnduikboot@gmail.com", "Cockpitcrew123");
+                smtpClient.Credentials = credentials;
+
+                MailMessage mail = new MailMessage();
+
+                //Setting From , To and CC
+                mail.From = new MailAddress("dnduikboot@gmail.com", "CV D'n Duikboot");
+                mail.To.Add(new MailAddress(user.Email));
+                mail.Subject = "Inschrijving CV D'n Duikboot 2019";
+                mail.IsBodyHtml = true;
+                mail.Body = result;
+
+                try
+                {
+                    smtpClient.Send(mail);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+            else
+            {
+                Console.WriteLine("File not found");
+            }
         }
     }
 }

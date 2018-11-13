@@ -114,3 +114,5 @@ D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\System.Web.Http.xml
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\System.Web.Http.WebHost.xml
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csproj.CopyComplete
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csprojAssemblyReference.cache
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\RazorEngine.dll
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\RazorEngine.xml

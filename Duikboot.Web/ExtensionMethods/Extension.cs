@@ -8,7 +8,6 @@ namespace Duikboot.Web.ExtensionMethods
 {
     public class Extension
     {
-
         public static User SetDays(User user)
         {
             user.Zaterdag = user.Zaterdag == null ? true : false;

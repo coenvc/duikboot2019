@@ -1,0 +1,26 @@
+﻿<html>
+<body>
+    <h2>Welkom aan boord van Duikboot's Partycruise, @Model.FirstName!</h2>
+
+    <p>Je hebt je succesvol ingeschreven voor carnaval 2019 met CV D'n Duikboot!</p>
+
+    @if (Model.Days.Count == 1)
+    {
+        <p>Je hebt je succesvol ingeschreven voor de volgende dag:</p>
+    }
+    @if (Model.Days.Count > 1)
+    {
+        <p>Je hebt je succesvol ingeschreven voor de volgende dagen:</p>
+    }
+    <ul>
+        @foreach (var day in Model.Days)
+        {
+            <li>@day.Key, de kosten voor deze dag zijn: @day.Value.ToString(),-</li>
+        }
+    </ul>
+    <p>Hiervoor heb je in totaal @Model.Amount.ToString(),- betaald.</p>
+    <p>Tot carnaval!</p>
+    <p>Met vriendelijke groet,</p>
+    <p>CV D'n Duikboot</p>
+</body>
+</html>

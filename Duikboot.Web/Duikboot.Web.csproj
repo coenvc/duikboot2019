@@ -54,6 +54,9 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -161,7 +164,8 @@
     <Content Include="Assets\img\content\Roeien_of_verzuipen.png" />
     <Content Include="Assets\img\content\Veurgloeien.jpg" />
     <Content Include="Assets\img\content\Voorlopige_planning.png" />
-    <Content Include="Assets\img\destinations\Lallebal.png" />
+    <Content Include="Assets\img\destinations\Lallebal.jpg" />
+    <Content Include="Assets\img\destinations\LOS_in_Loon%281%29.jpg" />
     <Content Include="Assets\img\destinations\LOS_in_Loon.jpg" />
     <Content Include="Assets\img\destinations\MOCP.jpg" />
     <Content Include="Assets\img\destinations\Roeien_of_verzuipen.png" />
@@ -191,12 +195,15 @@
     <Content Include="Assets\img\fotos\Los in loon4.jpg" />
     <Content Include="Assets\img\fotos\Los in loon5.jpg" />
     <Content Include="Assets\img\header-bg.jpg" />
+    <Content Include="Assets\img\header-bg2.jpg" />
     <Content Include="Assets\img\logos\BAM-Vermeer.jpg" />
     <Content Include="Assets\img\logos\Duikboot.png" />
+    <Content Include="Assets\img\logos\Streefland.png" />
     <Content Include="Assets\img\logos\Van_de_Pas.png" />
     <Content Include="Assets\img\logos\Weijtmans.png" />
     <Content Include="Assets\img\logos\Woox.png" />
     <Content Include="Assets\img\mail-image.png" />
+    <Content Include="Assets\img\planning%281%29.jpg" />
     <Content Include="Assets\img\planning-mobiel.jpg" />
     <Content Include="Assets\img\planning.jpg" />
     <Content Include="Assets\img\portfolio\1.jpg" />
@@ -389,6 +396,7 @@
     <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
     <Content Include="vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Templates\SubscriptionEmail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

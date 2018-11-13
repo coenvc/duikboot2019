@@ -19,7 +19,7 @@ namespace Duikboot.Web.Models
         public bool? Maandag { get; set; }
         public bool? Dinsdag { get; set; }
         public decimal? Amount { get; set; }
-
+        public Dictionary<string, int> Days { get; set; }
         public User()
         {
 
