@@ -117,10 +117,10 @@ namespace Duikboot.Web.Controllers
         private void SendMail(User user)
         {
 
-            var test = Server.MapPath("~/Templates/SubscriptionEmail.cshtml");
-            if (System.IO.File.Exists(test))
+            var subscriptionTemplate = Server.MapPath("~/Templates/SubscriptionEmail.cshtml");
+            if (System.IO.File.Exists(subscriptionTemplate))
             {
-                string template = System.IO.File.ReadAllText(test);
+                string template = System.IO.File.ReadAllText(subscriptionTemplate);
                 var result = Engine.Razor.RunCompile(template, Guid.NewGuid().ToString(), null, user);
 
                 SmtpClient smtpClient = new SmtpClient();
