@@ -12,14 +12,23 @@
     {
         <p>Je hebt je succesvol ingeschreven voor de volgende dagen:</p>
     }
+
     <ul>
         @foreach (var day in Model.Days)
         {
-            <li>@day.Key, de kosten voor deze dag zijn: @day.Value.ToString(),-</li>
+            <li>@day.Key, de kosten voor deze dag zijn: €@day.Value.ToString(),-</li>
         }
     </ul>
-    <p>Hiervoor heb je in totaal @Model.Amount.ToString(),- betaald.</p>
-    <p>Tot carnaval!</p>
+    <p>Hiervoor heb je in totaal €@Model.Amount.ToString(),- betaald.</p>
+
+    <p>
+        CV D'n Duikboot heeft het recht om je inschrijving nog af te keuren.
+        Mocht je inschrijving afgekeurd worden ontvang je hier nog een mail over en ontvang je je geld terug.
+    </p>
+
+    <p>Wij gaan zorgen voor een geniale Partycruise waarbij jij heel je kop er af kunt zuipen!</p>
+
+    <p>Tot binnenkort!</p>
     <p>Met vriendelijke groet,</p>
     <p>CV D'n Duikboot</p>
 </body>

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Mail;
+using System.Net.Mime;
 using Mollie.Api.Models.Payment.Response;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -117,31 +118,38 @@ namespace Duikboot.Web.Controllers
 
         private void SendMail(User user)
         {
-
             var subscriptionTemplate = Server.MapPath("~/Templates/SubscriptionEmail.cshtml");
             if (System.IO.File.Exists(subscriptionTemplate))
             {
-                string template = System.IO.File.ReadAllText(subscriptionTemplate);
+                var template = System.IO.File.ReadAllText(subscriptionTemplate);
                 var result = Engine.Razor.RunCompile(template, Guid.NewGuid().ToString(), null, user);
 
-                SmtpClient smtpClient = new SmtpClient();
+                //Creating SmtpClient
+                var smtpClient = new SmtpClient
+                {
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    EnableSsl = true,
+                    Host = ConfigurationManager.AppSettings["SmtpClientHost"],
+                    Port = int.Parse(ConfigurationManager.AppSettings["SmtpClientPort"]),
+                    UseDefaultCredentials = false
+                };
 
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.EnableSsl = true;
-                smtpClient.Host = "smtp.gmail.com";
-                smtpClient.Port = 587;
+                // Setting the credentials
+                var credentials =
+                    new System.Net.NetworkCredential(ConfigurationManager.AppSettings["Email"]
+                        , ConfigurationManager.AppSettings["EmailPassword"]);
 
-                smtpClient.UseDefaultCredentials = false;
-                System.Net.NetworkCredential credentials =
-                    new System.Net.NetworkCredential("dnduikboot@gmail.com", "Cockpitcrew123");
                 smtpClient.Credentials = credentials;
 
-                MailMessage mail = new MailMessage();
+                var mail = new MailMessage
+                {
+                    From = new MailAddress(ConfigurationManager.AppSettings["Email"], "CV D'n Duikboot")
+                };
 
-                //Setting From , To and CC
-                mail.From = new MailAddress("dnduikboot@gmail.com", "CV D'n Duikboot");
+                //Creating the mail
                 mail.To.Add(new MailAddress(user.Email));
                 mail.Subject = "Inschrijving CV D'n Duikboot 2019";
+
                 mail.IsBodyHtml = true;
                 mail.Body = result;
 
