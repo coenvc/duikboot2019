@@ -18,6 +18,7 @@ using Duikboot.Web.Models;
 using Mollie.Api.Models.Payment;
 using RazorEngine;
 using RazorEngine.Templating;
+using Duikboot.Web.Repositories;
 
 namespace Duikboot.Web.Controllers
 {
@@ -25,12 +26,16 @@ namespace Duikboot.Web.Controllers
     public class RegistrationController : Controller
     {
         private readonly IPaymentClient _paymentClient;
-        //private PassengerRepository _passengerRepository;
-
+        private UserRepository _userRepository;
+        private readonly CapacityRepository _capacityRepository;
+        
         public RegistrationController()
         {
-            this._paymentClient = new PaymentClient(ConfigurationManager.AppSettings["MollieTestKey"]);
-            //this._passengerRepository = new PassengerRepository();
+            this._paymentClient = new PaymentClient(ConfigurationManager.AppSettings["MollieLiveKey"]);
+
+            this._capacityRepository = new CapacityRepository();
+
+            this._userRepository = new UserRepository();
         }
 
         [System.Web.Http.HttpGet]
@@ -41,7 +46,7 @@ namespace Duikboot.Web.Controllers
 
         [System.Web.Mvc.HttpPost]
         [System.Web.Mvc.AcceptVerbs(HttpVerbs.Post)]
-        public async Task<ActionResult> Submit([FromBody]Duikboot.Web.Models.User user)
+        public async Task<ActionResult> Submit([FromBody]Models.User user)
         {
             user = Extension.SetDays(user);
 
@@ -92,8 +97,30 @@ namespace Duikboot.Web.Controllers
                 case (PaymentStatus.Paid):
                     Models.User meerijder = Session["Meerijder"] as Models.User;
 
-                    // Save _user;
+                    this._userRepository.Add(meerijder);
+
+                    if(meerijder.Zaterdag == true)
+                    {
+                        this._capacityRepository.UpdateSpots("Zaterdag");
+                    }
+                    if (meerijder.Zondag == true)
+                    {
+                        this._capacityRepository.UpdateSpots("Zondag");
+                    }
+
+                    if (meerijder.Maandag == true)
+                    {
+                        this._capacityRepository.UpdateSpots("Maandag");
+                    }
+
+                    if (meerijder.Dinsdag == true)
+                    {
+                        this._capacityRepository.UpdateSpots("Dinsdag");
+                    }
+
+
                     this.SendMail(meerijder);
+
                     return View("Complete");
                 default:
                     return View("Failed");
@@ -103,20 +130,10 @@ namespace Duikboot.Web.Controllers
         public ActionResult GetAvailability()
         {
 
-            // TODO: FIX WHEN DATABASE IS CONNECTED
-            var availability = new Dictionary<string, bool>
-            {
-                {"zaterdag", false},
-                {"zondag", false},
-                {"maandag", false},
-                {"dinsdag", false}
-            };
-
-            //return Json(meerijderRepository.GetAvailableDates(), JsonRequestBehavior.AllowGet);
-            return Json(availability, JsonRequestBehavior.AllowGet);
+            return Json(_capacityRepository.GetAvailableDates(), JsonRequestBehavior.AllowGet);
         }
 
-        private void SendMail(User user)
+        private void SendMail(Models.User user)
         {
             var subscriptionTemplate = Server.MapPath("~/Templates/SubscriptionEmail.cshtml");
             if (System.IO.File.Exists(subscriptionTemplate))
