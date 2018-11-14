@@ -116,3 +116,11 @@ D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csproj.Copy
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csprojAssemblyReference.cache
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\RazorEngine.dll
 D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\RazorEngine.xml
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\EntityFramework.dll
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\EntityFramework.SqlServer.dll
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\EntityFramework.xml
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\bin\EntityFramework.SqlServer.xml
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.Migrations.Initial.resources
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.Migrations.AddedSpotsToCapicity.resources
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.Migrations.PopulatedCapacityTable.resources
+D:\Documents\GitHub\duikboot2019\Duikboot.Web\obj\Debug\Duikboot.Web.csproj.GenerateResource.cache
