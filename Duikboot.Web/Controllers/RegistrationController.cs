@@ -50,22 +50,52 @@ namespace Duikboot.Web.Controllers
         {
             user = Extension.SetDays(user);
 
+            var dates = _capacityRepository.GetAvailableDates();
             user.Days = new Dictionary<string, int>();
+
             if (user.Zaterdag == true)
             {
-                user.Days.Add("Zaterdag", 40);
+                if (!dates["zaterdag"])
+                {
+                    user.Days.Add("Zaterdag", 40);
+                }
+                else
+                {
+                    user.Zaterdag = false;
+                }
             }
             if (user.Zondag == true)
             {
-                user.Days.Add("Zondag", 50);
+                if (!dates["zondag"])
+                {
+                    user.Days.Add("Zondag", 50);
+                }
+                else
+                {
+                    user.Zondag = false;
+                }
             }
             if (user.Maandag == true)
             {
-                user.Days.Add("Maandag", 45);
+                if (!dates["maandag"])
+                {
+                    user.Days.Add("Maandag", 45);
+                }
+                else
+                {
+                    user.Maandag = false;
+                }
             }
             if (user.Dinsdag == true)
             {
-                user.Days.Add("Dinsdag", 30);
+                if (!dates["dinsdag"])
+                {
+                    user.Days.Add("Dinsdag", 30);
+                }
+                else
+                {
+                    user.Dinsdag = false;
+                }
             }
 
             var amount = $"{user.Amount:0.00}".Replace(",", ".");
@@ -84,7 +114,6 @@ namespace Duikboot.Web.Controllers
             Session["Meerijder"] = user;
 
             return Redirect(paymentResponse.Links.Checkout.Href);
-
         }
 
         [System.Web.Mvc.HttpGet]
@@ -99,10 +128,13 @@ namespace Duikboot.Web.Controllers
 
                     this._userRepository.Add(meerijder);
 
+                    if (meerijder == null) return View("Failed");
+
                     if(meerijder.Zaterdag == true)
                     {
                         this._capacityRepository.UpdateSpots("Zaterdag");
                     }
+
                     if (meerijder.Zondag == true)
                     {
                         this._capacityRepository.UpdateSpots("Zondag");
@@ -118,10 +150,10 @@ namespace Duikboot.Web.Controllers
                         this._capacityRepository.UpdateSpots("Dinsdag");
                     }
 
-
                     this.SendMail(meerijder);
 
                     return View("Complete");
+
                 default:
                     return View("Failed");
             }

@@ -9,28 +9,23 @@ namespace Duikboot.Web.Repositories
     {
         private readonly DuikbootContext Db = new DuikbootContext();
 
-
         public bool HasSpots(string day)
         {
-            var selectedDay = Db.Capacity.Where(x => x.Name == day).FirstOrDefault();
+            var selectedDay = Db.Capacity.FirstOrDefault(x => x.Name.ToLower().Equals(day.ToLower()));
 
             if (selectedDay == null)
             {
                 return false;
             }
-            else
-            {
-                return (selectedDay.Spots <= 0);
-            }
 
+            return (selectedDay.Spots <= 0);
         }
 
         public void UpdateSpots(string day)
         {
-            var selectedDay = Db.Capacity.Where(x => x.Name == day).FirstOrDefault();
+            var selectedDay = Db.Capacity.FirstOrDefault(x => x.Name.ToLower().Equals(day.ToLower()));
 
-
-            if(selectedDay.Spots > 0)
+            if(selectedDay != null && selectedDay.Spots > 0)
             {
                 selectedDay.Spots -= 1;
             }
@@ -50,8 +45,5 @@ namespace Duikboot.Web.Repositories
 
             return availableDays;
         }
-
-
-
     }
 }
